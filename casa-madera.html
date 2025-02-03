@@ -17,7 +17,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            padding: 20px;
         }
         h1 {
             color: #d63384;
@@ -37,14 +37,42 @@
             font-weight: bold;
             margin-top: 10px;
         }
-        .image-container {
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
             margin-top: 20px;
         }
-        img {
-            width: 80%;
-            max-width: 500px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .gallery img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+        .lightbox:target {
+            display: flex;
         }
         .btn {
             font-size: 1.5rem;
@@ -64,8 +92,39 @@
         <h1>Casa Madera Awaits! 🌸</h1>
         <p class="message">A beautiful evening at Casa Madera filled with romance, delicious food, and unforgettable memories.</p>
         <p class="reservation">Your reservation is set for 8:00 PM on Valentine's Day. 💖</p>
-        <div class="image-container">
-            <img src="https://www.thecasamadera.com/images/toronto/gallery-1.jpg" alt="Casa Madera Toronto">
+        <div class="gallery">
+            <a href="#img1">
+                <img src="images/gallery-1.jpg" alt="Casa Madera Toronto - Interior View 1">
+            </a>
+            <a href="#img2">
+                <img src="images/gallery-2.jpg" alt="Casa Madera Toronto - Interior View 2">
+            </a>
+            <a href="#img3">
+                <img src="images/gallery-3.jpg" alt="Casa Madera Toronto - Interior View 3">
+            </a>
+            <a href="#img4">
+                <img src="images/gallery-4.jpg" alt="Casa Madera Toronto - Interior View 4">
+            </a>
+        </div>
+        <div class="lightbox" id="img1">
+            <a href="#">
+                <img src="images/gallery-1.jpg" alt="Casa Madera Toronto - Interior View 1">
+            </a>
+        </div>
+        <div class="lightbox" id="img2">
+            <a href="#">
+                <img src="images/gallery-2.jpg" alt="Casa Madera Toronto - Interior View 2">
+            </a>
+        </div>
+        <div class="lightbox" id="img3">
+            <a href="#">
+                <img src="images/gallery-3.jpg" alt="Casa Madera Toronto - Interior View 3">
+            </a>
+        </div>
+        <div class="lightbox" id="img4">
+            <a href="#">
+                <img src="images/gallery-4.jpg" alt="Casa Madera Toronto - Interior View 4">
+            </a>
         </div>
         <a href="index.html" class="btn">Back to Home</a>
     </div>
